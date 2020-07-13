@@ -1,5 +1,6 @@
 module.exports = {
     plugins: [
+        'gatsby-plugin-postcss',
         {
             resolve: 'gatsby-source-filesystem',
             options: {
@@ -8,6 +9,13 @@ module.exports = {
             }
         },
         'gatsby-transformer-sharp',
-        'gatsby-plugin-sharp'
+        'gatsby-plugin-sharp',
+        {
+            resolve: 'gatsby-plugin-purgecss',
+            options: {
+                printRejected: true,
+                tailwind: true
+            }
+        }
     ]
 }
